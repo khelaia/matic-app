@@ -83,7 +83,7 @@ function Search({ history, className, style }) {
     data: { isENSReady }
   } = useQuery(SEARCH_QUERY)
   let input
-
+  console.log(inputValue, 'inputval')
   const handleParse = e => {
     setInputValue(
       e.target.value
@@ -108,6 +108,7 @@ function Search({ history, className, style }) {
           // inputValue doesn't have potential whitespace
           searchTerm = inputValue.toLowerCase()
         }
+        console.log(searchTerm, 'zzz', type)
         if (!searchTerm || searchTerm.length < 1) {
           return
         }

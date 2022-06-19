@@ -22,7 +22,7 @@ const cache = new InMemoryCache({
 })
 
 const endpoints = {
-  '1': 'https://api.thegraph.com/subgraphs/name/ensdomains/ens',
+  '1': 'https://api.thegraph.com/subgraphs/name/khelaia/matic',
   '3': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensropsten',
   '4': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensrinkeby',
   '5': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensgoerli'
@@ -39,7 +39,7 @@ function getGraphQLAPI() {
     return endpoints[network]
   }
 
-  return endpoints['1']
+  return 'https://api.thegraph.com/subgraphs/name/khelaia/matic'
 }
 
 function fromPromise(promise, operation) {

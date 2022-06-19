@@ -11,7 +11,7 @@ import {
   isDecrypted,
   labelhash,
   utils
-} from '@ensdomains/ui'
+} from '@khelaia/ui'
 import { formatsByName } from '@ensdomains/address-encoder'
 import isEqual from 'lodash/isEqual'
 import modeNames from '../modes'
@@ -87,7 +87,7 @@ export const handleSingleTransaction = async (
     let addressAsBytes
 
     // use 0x00... for ETH because an empty string throws
-    if (coinRecord.key === 'ETH' && coinRecord.value === '') {
+    if (coinRecord.key === 'MATIC' && coinRecord.value === '') {
       coinRecord.value = emptyAddress
     }
 
@@ -141,7 +141,7 @@ export const handleMultipleTransactions = async (
         const { decoder, coinType } = formatsByName[record.key]
         let addressAsBytes
         // use 0x00... for ETH because an empty string throws
-        if (record.key === 'ETH' && record.value === '') {
+        if (record.key === 'MATIC' && record.value === '') {
           record.value = emptyAddress
         }
         if (!record.value || record.value === '') {
@@ -170,7 +170,7 @@ export const handleMultipleTransactions = async (
 async function getRegistrarEntry(name) {
   const registrar = getRegistrar()
   const nameArray = name.split('.')
-  if (nameArray.length > 3 || nameArray[1] !== 'eth') {
+  if (nameArray.length > 3 || nameArray[1] !== 'matic') {
     return {}
   }
 
@@ -191,7 +191,7 @@ async function getRegistrarEntry(name) {
     isNewRegistrar,
     available
   } = entry
-
+  console.log(available, 'avai')
   return {
     name: `${name}`,
     state: modeNames[state],
@@ -221,6 +221,7 @@ async function getParent(name) {
   nameArray.shift()
   const parent = nameArray.join('.')
   const parentOwner = await ens.getOwner(parent)
+
   return [parent, parentOwner]
 }
 
@@ -268,7 +269,7 @@ async function getDNSEntryDetails(name) {
   const registrar = getRegistrar()
   const nameArray = name.split('.')
   const networkId = await getNetworkId()
-  if (nameArray.length !== 2 || nameArray[1] === 'eth') return {}
+  if (nameArray.length !== 2 || nameArray[1] === 'matic') return {}
 
   let tld = nameArray[1]
   let owner
@@ -280,8 +281,10 @@ async function getDNSEntryDetails(name) {
   }
 
   let isDNSRegistrarSupported = await registrar.isDNSRegistrar(tldowner)
+
   if (isDNSRegistrarSupported && tldowner !== emptyAddress) {
     const dnsEntry = await registrar.getDNSEntry(name, tldowner, owner)
+
     return {
       isDNSRegistrar: true,
       dnsOwner: dnsEntry.claim?.result
@@ -309,7 +312,8 @@ function adjustForShortNames(node) {
   const { label, parent } = node
 
   // return original node if is subdomain or not eth
-  if (nameArray.length > 2 || parent !== 'eth' || label.length > 6) return node
+  if (nameArray.length > 2 || parent !== 'matic' || label.length > 6)
+    return node
 
   //if the auctions are over
   if (new Date() > new Date(1570924800000)) {
@@ -344,7 +348,7 @@ const resolvers = {
     publicResolver: async () => {
       try {
         const ens = getENS()
-        const resolver = await ens.getAddress('resolver.eth')
+        const resolver = await ens.getAddress('resolver.matic')
         return {
           address: resolver,
           __typename: 'Resolver'
@@ -391,7 +395,7 @@ const resolvers = {
 
         const ens = getENS()
         const decrypted = isDecrypted(name)
-
+        console.log(ens, 'ens')
         let node = {
           name: null,
           revealDate: null,
@@ -437,7 +441,6 @@ const resolvers = {
           testEntry,
           registrant
         ] = await Promise.all(dataSources)
-
         const names = namesReactive()
 
         let detailedNode = adjustForShortNames({
@@ -912,7 +915,7 @@ const resolvers = {
 
       // get public resolver
       try {
-        const publicResolver = await ens.getAddress('resolver.eth')
+        const publicResolver = await ens.getAddress('resolver.matic')
         const resolver = await ens.getResolver(name)
         const isOldContentResolver = calculateIsOldContentResolver(resolver)
 

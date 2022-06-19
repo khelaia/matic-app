@@ -1,4 +1,4 @@
-import { encodeContenthash, isValidContenthash } from '@ensdomains/ui'
+import { encodeContenthash, isValidContenthash } from '@khelaia/ui'
 import { addressUtils, supportedAvatarProtocols } from 'utils/utils'
 import { formatsByName } from '@ensdomains/address-encoder'
 import validateTokenURI from 'api/avatar'
@@ -24,7 +24,7 @@ export function validateRecord({ key, value, contractFn, addr }) {
       return true
     case 'setAddr(bytes32,uint256,bytes)':
       if (value === '') return false
-      if (key === 'ETH') {
+      if (key === 'MATIC') {
         return addressUtils.isAddress(value)
       }
       if (key.match(/_LEGACY/)) {

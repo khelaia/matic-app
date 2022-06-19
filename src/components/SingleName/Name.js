@@ -22,7 +22,7 @@ import {
 } from '../Banner/DAOBanner'
 import NameWrapperBanner from '../Banner/NameWrapperBanner'
 import NameWrapperJSON from '@ensdomains/ens-contracts/artifacts/contracts/wrapper/NameWrapper.sol/NameWrapper.json'
-import { ethers, getNamehash, getProvider } from '@ensdomains/ui'
+import { ethers, getNamehash, getProvider } from '@khelaia/ui'
 
 const Owner = styled('div')`
   color: #ccd4da;
@@ -37,12 +37,12 @@ const RightBar = styled('div')`
 const Favourite = styled(DefaultFavourite)``
 
 function isRegistrationOpen(available, parent) {
-  return parent === 'eth' && available
+  return parent === 'matic' && available
 }
 
 function isDNSRegistrationOpen(domain) {
   const nameArray = domain.name?.split('.')
-  if (nameArray?.length !== 2 || nameArray?.[1] === 'eth') {
+  if (nameArray?.length !== 2 || nameArray?.[1] === 'matic') {
     return false
   }
   return domain.isDNSRegistrar && domain.owner === EMPTY_ADDRESS
@@ -126,6 +126,7 @@ function Name({ details: domain, name, pathname, type, refetch }) {
   const isRegistrant = !domain.available && domain.registrant === account
 
   const registrationOpen = isRegistrationOpen(domain.available, domain.parent)
+  console.log('registrationOpen', registrationOpen)
   const preferredTab = registrationOpen ? 'register' : 'details'
 
   let ownerType,
@@ -155,13 +156,13 @@ function Name({ details: domain, name, pathname, type, refetch }) {
 
   return (
     <>
-      <NonMainPageBannerContainerWithMarginBottom>
-        {showNameWrapperBanner ? (
-          <NameWrapperBanner isWrapped={isNameWrapped} />
-        ) : (
-          <DAOBannerContent />
-        )}
-      </NonMainPageBannerContainerWithMarginBottom>
+      {/*<NonMainPageBannerContainerWithMarginBottom>*/}
+      {/*  {showNameWrapperBanner ? (*/}
+      {/*    <NameWrapperBanner isWrapped={isNameWrapped} />*/}
+      {/*  ) : (*/}
+      {/*    <DAOBannerContent />*/}
+      {/*  )}*/}
+      {/*</NonMainPageBannerContainerWithMarginBottom>*/}
       <NameContainer state={containerState} key={key}>
         <TopBar percentDone={percentDone}>
           <Title>

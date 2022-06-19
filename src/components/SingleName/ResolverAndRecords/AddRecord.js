@@ -12,7 +12,7 @@ import Button from '../../Forms/Button'
 import { DetailsKey } from '../DetailsItem'
 import DetailsItemInput from '../DetailsItemInput'
 import DefaultSelect from '../../Forms/Select'
-import DefaultAddressInput from '@ensdomains/react-ens-address'
+import DefaultAddressInput from '@khelaia/react-ens-address'
 import { asyncThrottle } from 'utils/utils'
 
 const AddressInput = styled(DefaultAddressInput)`

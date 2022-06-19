@@ -33,5 +33,5 @@ export function checkCertificate(name) {
 export function isEthSubdomain(name) {
   let labels = name.split('.')
   let suffix = labels[labels.length - 1]
-  return suffix === 'eth' && name !== 'eth'
+  return suffix === 'matic' && name !== 'matic'
 }

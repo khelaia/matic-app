@@ -30,12 +30,12 @@ import {
   networkReactive
 } from './apollo/reactiveVars'
 
-jest.mock('@ensdomains/ui', () => ({
-  ...jest.requireActual('@ensdomains/ui'),
+jest.mock('@khelaia/ui', () => ({
+  ...jest.requireActual('@khelaia/ui'),
   getNetworkId: jest.fn(),
   getNetwork: jest.fn()
 }))
-import { getNetworkId, getNetwork } from '@ensdomains/ui'
+import { getNetworkId, getNetwork } from '@khelaia/ui'
 
 jest.mock('./apollo/sideEffects', () => ({
   ...jest.requireActual('./apollo/sideEffects'),

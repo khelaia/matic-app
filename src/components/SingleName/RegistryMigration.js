@@ -102,7 +102,7 @@ export default function RegistryMigration({
           : dnssecmode
           ? dnssecMigrateMessage
           : defaultMessage}
-        {domain.parent !== 'eth' && !dnssecmode && (
+        {domain.parent !== 'matic' && !dnssecmode && (
           <SubWarning>{t('registrymigration.donotaccept')}</SubWarning>
         )}
       </WarningContent>

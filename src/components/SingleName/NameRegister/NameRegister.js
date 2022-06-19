@@ -30,6 +30,7 @@ import ProgressRecorder from './ProgressRecorder'
 import useNetworkInfo from '../../NetworkInformation/useNetworkInfo'
 import { sendNotification } from './notification'
 import PremiumPriceOracle from './PremiumPriceOracle'
+import getClient from '../../../apollo/apolloClient'
 const NameRegisterContainer = styled('div')`
   padding: 20px 40px;
 `
@@ -75,6 +76,7 @@ const NameRegister = ({
     data: { getEthPrice: ethUsdPrice } = {},
     loading: ethUsdPriceLoading
   } = useQuery(GET_ETH_PRICE)
+  console.log(ethUsdPrice, 'MATIC')
   const { data: { getPriceCurve } = {} } = useQuery(GET_PRICE_CURVE)
   const { loading: gasPriceLoading, price: gasPrice } = useGasPrice()
   const { block } = useBlock()
@@ -145,6 +147,7 @@ const NameRegister = ({
       if (blockCreatedAt && !waitUntil) {
         setWaitUntil(blockCreatedAt + waitTime * 1000)
       }
+      console.log(waitTime, secondsPassed, 'wait time')
       if (secondsPassed < waitTime) {
         setSecondsPassed(s => s + 1)
       } else {

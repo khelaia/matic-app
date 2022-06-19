@@ -1,9 +1,4 @@
-import {
-  getAccounts,
-  getNetwork,
-  getNetworkId,
-  isReadOnly
-} from '@ensdomains/ui'
+import { getAccounts, getNetwork, getNetworkId, isReadOnly } from '@khelaia/ui'
 import { connect } from './api/web3modal'
 import { setup } from './apollo/mutations/ens'
 import {
@@ -38,12 +33,7 @@ export const setSubDomainFavourites = () => {
 
 export const isSupportedNetwork = networkId => {
   switch (networkId) {
-    case 1:
-    case 3:
-    case 4:
-    case 5:
-    case 1337:
-    case 31337:
+    case 137:
       return true
     default:
       return false

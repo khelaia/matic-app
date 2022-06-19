@@ -24,7 +24,7 @@ describe('Home', () => {
     const mockProps = {
       domain: {
         name: 'vitalik.eth',
-        parent: 'eth'
+        parent: 'matic'
       },
       pathname: '',
       tab: 'register',

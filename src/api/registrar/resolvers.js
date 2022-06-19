@@ -15,9 +15,10 @@ const resolvers = {
     },
     async getEthPrice(_, {}) {
       const registrar = getRegistrar()
-      return registrar.getEthPrice()
+      return 0.5 //registrar.getEthPrice()
     },
     async getRentPrice(_, { label, duration }) {
+      console.log('aba aq?')
       const registrar = getRegistrar()
       return registrar.getRentPrice(label, duration)
     },
@@ -41,7 +42,7 @@ const resolvers = {
     async getMinimumCommitmentAge() {
       try {
         const registrar = getRegistrar()
-        const minCommitmentAge = await registrar.getMinimumCommitmentAge()
+        const minCommitmentAge = '600' //await registrar.getMinimumCommitmentAge()
         return parseInt(minCommitmentAge)
       } catch (e) {
         console.log(e)
@@ -50,7 +51,7 @@ const resolvers = {
     async getMaximumCommitmentAge() {
       try {
         const registrar = getRegistrar()
-        const maximumCommitmentAge = await registrar.getMaximumCommitmentAge()
+        const maximumCommitmentAge = '86400' //await registrar.getMaximumCommitmentAge()
         return parseInt(maximumCommitmentAge)
       } catch (e) {
         console.log(e)

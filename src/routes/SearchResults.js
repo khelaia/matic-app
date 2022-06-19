@@ -31,7 +31,7 @@ const useCheckValidity = (_searchTerm, isENSReady) => {
       setErrors([])
 
       if (_searchTerm.split('.').length === 1) {
-        searchTerm = _searchTerm + '.eth'
+        searchTerm = _searchTerm + '.matic'
       } else {
         searchTerm = _searchTerm
       }
@@ -71,7 +71,7 @@ const ResultsContainer = ({ searchDomain, match }) => {
   }
 
   const { errors, parsed } = useCheckValidity(searchTerm, isENSReady)
-
+  console.log(searchTerm, parsed, 'esss')
   if (!isENSReady) {
     return <div>Loading</div>
   }
@@ -88,9 +88,9 @@ const ResultsContainer = ({ searchDomain, match }) => {
   if (parsed) {
     return (
       <>
-        <NonMainPageBannerContainer>
-          <DAOBannerContent />
-        </NonMainPageBannerContainer>
+        {/*<NonMainPageBannerContainer>*/}
+        {/*  <DAOBannerContent />*/}
+        {/*</NonMainPageBannerContainer>*/}
         <H2>
           <Trans i18nKey="singleName.search.title">Names</Trans>
         </H2>

@@ -45,7 +45,7 @@ describe('Name detail view', () => {
   })
   it('can see list of top level domains from [root]', () => {
     cy.visit(`${NAME_ROOT}/[root]/subdomains`)
-    cy.queryByTestId('eth', { timeout: 30000 }).should('exist')
+    cy.queryByTestId('matic', { timeout: 30000 }).should('exist')
     cy.queryByTestId('reverse', { timeout: 1000 }).should('exist')
     cy.url().should('eq', `${NAME_ROOT}/[root]/subdomains`)
   })
@@ -100,7 +100,7 @@ describe('Name detail view', () => {
   })
 
   it('can change the resolver to the public resolver', () => {
-    cy.visit(`${NAME_ROOT}/superawesome.eth`)
+    cy.visit(`${NAME_ROOT}/superawesome.matic`)
     waitUntilInputResolves({ type: 'testId', value: 'edit-resolver' }).then(
       () => {
         cy.getByTestId('edit-resolver').click({ force: true })
@@ -177,7 +177,7 @@ describe('Name detail view', () => {
       cy.getByText('Coin', { timeout: 10000 }).click({
         force: true
       })
-      cy.getByText('ETH', { timeout: 10000 }).click({
+      cy.getByText('MATIC', { timeout: 10000 }).click({
         force: true
       })
       cy.getByPlaceholderText('Enter a ETH Address', {
@@ -227,7 +227,7 @@ describe('Name detail view', () => {
         .click({ force: true })
         .getByText('Coin', { exact: false })
         .click({ force: true })
-        .getByText('ETH', { timeout: 10000 })
+        .getByText('MATIC', { timeout: 10000 })
         .click({
           force: true
         })

@@ -6,7 +6,7 @@ import differenceWith from 'lodash/differenceWith'
 import { useTranslation } from 'react-i18next'
 import { gql } from '@apollo/client'
 
-import { getNamehash, emptyAddress } from '@ensdomains/ui'
+import { getNamehash, emptyAddress } from '@khelaia/ui'
 import { useEditable } from '../../hooks'
 import { ADD_MULTI_RECORDS } from '../../../graphql/mutations'
 import COIN_LIST from 'constants/coinList'
@@ -77,7 +77,7 @@ import { validateRecord } from '../../../utils/records'
 import { asyncThrottle, usePrevious } from '../../../utils/utils'
 import { isEthSubdomain, requestCertificate } from './Certificate'
 
-const COIN_PLACEHOLDER_RECORDS = ['ETH', ...COIN_LIST.slice(0, 3)]
+const COIN_PLACEHOLDER_RECORDS = ['MATIC', ...COIN_LIST.slice(0, 3)]
 
 function isEmpty(record) {
   if (parseInt(record, 16) === 0) {
@@ -232,7 +232,7 @@ const getInitialRecords = (domain, dataAddresses, dataTextRecords) => {
 const getCoins = updatedRecords =>
   updatedRecords
     .filter(record => record.contractFn === 'setAddr(bytes32,uint256,bytes)')
-    .sort(record => (record.key === 'ETH' ? -1 : 1))
+    .sort(record => (record.key === 'MATIC' ? -1 : 1))
 
 const getContent = updatedRecords => {
   const content = updatedRecords.filter(

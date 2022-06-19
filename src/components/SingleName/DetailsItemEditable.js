@@ -42,7 +42,7 @@ import Pencil from '../Forms/Pencil'
 import DefaultInfo from '../Icons/Info'
 import DefaultPendingTx from '../PendingTx'
 import DefaultPricer from './Pricer'
-import DefaultAddressInput from '@ensdomains/react-ens-address'
+import DefaultAddressInput from '@khelaia/react-ens-address'
 import CopyToClipboard from '../CopyToClipboard/'
 import { isOwnerOfParentDomain } from '../../utils/utils'
 
@@ -175,7 +175,7 @@ function getMessages({ keyName, parent, deedOwner, isDeedOwner, t }) {
   let [newValue, newType] = getDefaultMessage(keyName, t)
   if (
     keyName === 'Owner' &&
-    parent === 'eth' &&
+    parent === 'matic' &&
     parseInt(deedOwner, 16) !== 0
   ) {
     newValue = t('singleName.messages.noresolver')
@@ -385,6 +385,7 @@ const Editable = ({
       skip: keyName !== 'Expiration Date'
     }
   )
+  console.log(getRentPrice, 'get rent price')
   const isNewResolverAddress =
     keyName === 'Resolver' &&
     addressUtils.isAddress(newValue) &&
@@ -438,9 +439,7 @@ const Editable = ({
     }
   )
 
-  const { data, loading } = useQuery(GET_PUBLIC_RESOLVER, {
-    fetchPolicy: 'network-only'
-  })
+  const { data, loading } = useQuery(GET_PUBLIC_RESOLVER, {})
 
   return (
     <DetailsEditableContainer
@@ -651,7 +650,7 @@ const Editable = ({
                     <DefaultResolverButton
                       onClick={e => {
                         e.preventDefault()
-                        updateValue(data.publicResolver.address)
+                        updateValue(process.env.REACT_APP_TLD_RESOLVER)
                       }}
                     >
                       {t('singleName.resolver.publicResolver')}

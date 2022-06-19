@@ -202,6 +202,7 @@ function DetailsContainer({
 }) {
   const { t } = useTranslation()
   const isExpired = domain.expiryTime < new Date()
+  console.log(domain.available, 'is available')
   const domainOwner =
     domain.available || domain.owner === '0x0' ? null : domain.owner
   const registrant =
@@ -214,7 +215,7 @@ function DetailsContainer({
   const showUnclaimableWarning =
     is2ld &&
     parseInt(domain.owner) === 0 &&
-    domain.parent !== 'eth' &&
+    domain.parent !== 'matic' &&
     !domain.isDNSRegistrar
 
   return (
@@ -262,7 +263,7 @@ function DetailsContainer({
         </GracePeriodWarningContainer>
       )}
       <OwnerFields outOfSync={outOfSync}>
-        {domain.parent === 'eth' && domain.isNewRegistrar ? (
+        {domain.parent === 'matic' && domain.isNewRegistrar ? (
           <>
             <DetailsItemEditable
               domain={domain}
@@ -297,7 +298,7 @@ function DetailsContainer({
               copyToClipboard={true}
             />
           </>
-        ) : domain.parent === 'eth' && !domain.isNewRegistrar ? (
+        ) : domain.parent === 'matic' && !domain.isNewRegistrar ? (
           <>
             <DetailsItem uneditable>
               <DetailsKey>{t('c.registrant')}</DetailsKey>

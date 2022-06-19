@@ -1,5 +1,5 @@
 import { utils as avtUtils } from '@ensdomains/ens-avatar'
-import { ethers, getProvider } from '@ensdomains/ui'
+import { ethers, getProvider } from '@khelaia/ui'
 
 const specs = {
   erc721: {

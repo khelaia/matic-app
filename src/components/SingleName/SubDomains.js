@@ -11,7 +11,7 @@ import Loader from '../Loader'
 import { H2 } from '../Typography/Basic'
 import AddSubdomain from './AddSubdomain'
 import ChildDomainItem from '../DomainItem/ChildDomainItem'
-import { getNamehash } from '@ensdomains/ui'
+import { getNamehash } from '@khelaia/ui'
 import { decryptName } from '../../api/labels'
 import { useQuery } from '@apollo/client'
 
@@ -197,7 +197,7 @@ function SubDomains({
                   refetch={refetch}
                   canAddSubdomain={canAddSubdomain}
                 />
-                {subdomains.map(d => {
+                {subdomains.map((d, index) => {
                   let name, parentLabel
                   if (domain.name === '[root]') {
                     parentLabel = ''
@@ -211,6 +211,7 @@ function SubDomains({
                   }
                   return (
                     <ChildDomainItem
+                      key={index}
                       showBlockies={true}
                       name={name}
                       isMigrated={d.isMigrated}

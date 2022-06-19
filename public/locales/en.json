@@ -1,6 +1,6 @@
 {
   "address": {
-    "etherscanButton": "View on Etherscan",
+    "etherscanButton": "View on Polygonscan",
     "filter": {
       "controller": "Controller",
       "registrant": "Registrant"

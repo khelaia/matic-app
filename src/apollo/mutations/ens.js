@@ -1,4 +1,4 @@
-import { setupENS } from '@ensdomains/ui'
+import { setupENS } from '@khelaia/ui'
 import { isENSReadyReactive } from '../reactiveVars'
 
 let ens = {},

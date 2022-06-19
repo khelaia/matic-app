@@ -69,7 +69,7 @@ const Price = ({
   return (
     <PriceContainer>
       <Value>
-        {ethPrice} ETH
+        {ethPrice} MATIC
         {withPremium && (
           <USD>
             {withPremium}${priceInUsd}

@@ -246,10 +246,10 @@ const QuestionMark = styled(QuestionMarkDefault)`
 `
 
 const LogoLarge = styled(motion.img)`
-  width: 50%;
+  width: 100%;
   margin: 0 auto 0;
   ${mq.medium`
-    width: 223px;
+    width: 323px;
   `}
 `
 
@@ -341,16 +341,16 @@ export default ({ match }) => {
           <NavLink to="/favourites">{t('c.favourites')}</NavLink>
           <ExternalLink href={aboutPageURL()}>{t('c.about')}</ExternalLink>
         </Nav>
-        <MainPageBannerContainer>
-          <DAOBannerContent />
-        </MainPageBannerContainer>
+        {/*<MainPageBannerContainer>*/}
+        {/*  <DAOBannerContent />*/}
+        {/*</MainPageBannerContainer>*/}
       </HeroTop>
       <SearchContainer>
         <>
           <LogoLarge
             initial={animation.initial}
             animate={animation.animate}
-            src={ENSLogo}
+            src={'/main-logo.png'}
             alt="ENS logo"
           />
           <PermanentRegistrarLogo
