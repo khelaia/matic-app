@@ -42,7 +42,7 @@ const resolvers = {
     async getMinimumCommitmentAge() {
       try {
         const registrar = getRegistrar()
-        const minCommitmentAge = '600' //await registrar.getMinimumCommitmentAge()
+        const minCommitmentAge = await registrar.getMinimumCommitmentAge()
         return parseInt(minCommitmentAge)
       } catch (e) {
         console.log(e)
@@ -51,7 +51,7 @@ const resolvers = {
     async getMaximumCommitmentAge() {
       try {
         const registrar = getRegistrar()
-        const maximumCommitmentAge = '86400' //await registrar.getMaximumCommitmentAge()
+        const maximumCommitmentAge = await registrar.getMaximumCommitmentAge()
         return parseInt(maximumCommitmentAge)
       } catch (e) {
         console.log(e)

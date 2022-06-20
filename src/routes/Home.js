@@ -127,8 +127,9 @@ const HowToUse = styled(HowToUseDefault)`
 `
 
 const Hero = styled('section')`
-  background: url(${bg});
-  background-size: cover;
+  background: cornflowerblue;
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, #ffffff 1px, rgba(0, 0, 0, 0) 1px);
   padding: 60px 20px 20px;
   position: relative;
   display: flex;
