@@ -126,7 +126,6 @@ function Name({ details: domain, name, pathname, type, refetch }) {
   const isRegistrant = !domain.available && domain.registrant === account
 
   const registrationOpen = isRegistrationOpen(domain.available, domain.parent)
-  console.log('registrationOpen', registrationOpen)
   const preferredTab = registrationOpen ? 'register' : 'details'
 
   let ownerType,

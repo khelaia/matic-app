@@ -76,7 +76,6 @@ const NameRegister = ({
     data: { getEthPrice: ethUsdPrice } = {},
     loading: ethUsdPriceLoading
   } = useQuery(GET_ETH_PRICE)
-  console.log(ethUsdPrice, 'MATIC')
   const { data: { getPriceCurve } = {} } = useQuery(GET_PRICE_CURVE)
   const { loading: gasPriceLoading, price: gasPrice } = useGasPrice()
   const { block } = useBlock()

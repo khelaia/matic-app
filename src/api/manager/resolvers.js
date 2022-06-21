@@ -191,7 +191,6 @@ async function getRegistrarEntry(name) {
     isNewRegistrar,
     available
   } = entry
-  console.log(available, 'avai')
   return {
     name: `${name}`,
     state: modeNames[state],

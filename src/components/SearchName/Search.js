@@ -83,7 +83,6 @@ function Search({ history, className, style }) {
     data: { isENSReady }
   } = useQuery(SEARCH_QUERY)
   let input
-  console.log(inputValue, 'inputval')
   const handleParse = e => {
     setInputValue(
       e.target.value
