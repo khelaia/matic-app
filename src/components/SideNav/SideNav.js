@@ -9,6 +9,8 @@ import File from '../Icons/File'
 import { aboutPageURL, hasNonAscii } from '../../utils/utils'
 import SpeechBubble from '../Icons/SpeechBubble'
 import { ReactComponent as FaqIcon } from '../../assets/faqIcon.svg'
+import { ReactComponent as TwitterIcon } from '../../assets/twitter.svg'
+import { ReactComponent as DiscordIcon } from '../../assets/discord.svg'
 
 import mq from 'mediaQuery'
 import { Link, withRouter } from 'react-router-dom'
@@ -182,6 +184,21 @@ function SideNav({ match, isMenuOpen, toggleMenu }) {
             <FaqIcon />
             <span>{t('c.faq')}</span>
           </NavLink>
+        </li>
+        <li style={{ listStyle: 'none', display: 'flex' }}>
+          <ThirdPartyLink
+            href={'https://twitter.com/asedomains'}
+            target={'_blank'}
+          >
+            <TwitterIcon />
+          </ThirdPartyLink>
+          <ThirdPartyLink
+            href={'https://discord.gg/UYb7kumf3s'}
+            target={'_blank'}
+            style={{ marginLeft: '10px' }}
+          >
+            <DiscordIcon />
+          </ThirdPartyLink>
         </li>
         {/* <li>
           <ThirdPartyLink href={aboutPageURL()}>

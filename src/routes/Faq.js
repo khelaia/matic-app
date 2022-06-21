@@ -120,21 +120,6 @@ function Faq() {
           snatching up names.
         </Section>
 
-        <Section question="How much gas does it cost to register and extend registration?">
-          It depends on the gas price. You can check the historical registration
-          and extending transaction costs
-          <a href="https://explore.duneanalytics.com/public/dashboards/48pBVvSxRNVjSE8Ing1uOrCtjD4r3WmV0v5KpS05">
-            {' '}
-            here{' '}
-          </a>
-          . "Transaction cost (USD)" query will tell you how much it costs to
-          register (commit + registerWithConfig) and extend registration.
-          <br />
-          Please bear in mind that "registerWithConfig" combines 3 transactions
-          (register, set resolver and set eth address) hence the gas cost is
-          relatively expensive.
-        </Section>
-
         <H2>When you register</H2>
 
         <Section question="At step 1, the transaction was slow so I speeded up">
