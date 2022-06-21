@@ -22,7 +22,7 @@ const LogoContainer = styled(Link)`
   width: auto;
 
   ${mq.medium`
-    width: 200px;
+    width: 140px;
   `}
 `
 
@@ -30,7 +30,7 @@ const Logo = ({ color, className, to = '' }) => (
   <LogoContainer className={className} to={to}>
     {/*<IconLogo src={ENSLogo} />*/}
     {/*<LogoTyped color={color} />*/}
-    <img src="/logo.png" alt="" style={{ width: '150px' }} />
+    <img src="/logo.png" alt="" style={{ width: '35px' }} />
   </LogoContainer>
 )
 

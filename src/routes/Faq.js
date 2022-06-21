@@ -80,7 +80,7 @@ function Faq() {
           and Twitter handle, and more.
         </Section>
 
-        <Section question="Can I use an ENS name to point to my website?">
+        {/* <Section question="Can I use an ENS name to point to my website?">
           Though ENS can technically store anything, there aren't many third
           party tools and applications which resolve IP addresses attached to
           ENS.
@@ -97,7 +97,7 @@ function Faq() {
           <a href="https://pinata.cloud/">IPFS Pinata</a>, then set the CID to
           your contenthash. See the source code of depositcontract.eth.link as
           an example.
-        </Section>
+        </Section> */}
 
         <Section question="What is the maximum length of a name I can register?">
           There is no limit on the name length.
@@ -108,9 +108,9 @@ function Faq() {
         <Section question="How much does it cost to register a .eth name?">
           Currently, registration costs are set at the following prices:
           <ul>
-            <li>5+ character .eth names: $5 in ETH per year.</li>
-            <li>4 character .eth names: $160 in ETH per year.</li>
-            <li>3 character .eth names $640 in ETH per year.</li>
+            <li>5+ character .eth names: $5 in MATIC per year.</li>
+            <li>4 character .eth names: $50 in MATIC per year.</li>
+            <li>3 character .eth names $200 in MATIC per year.</li>
           </ul>
           3 and 4 character names have 'premium' pricing to reflect the small
           number of these names available.
@@ -135,14 +135,6 @@ function Faq() {
           relatively expensive.
         </Section>
 
-        <Section question="Can I register names other than .eth?">
-          Yes, you can import into ENS any DNS name with the required DNSSEC.
-          <br />
-          Please refer to our{' '}
-          <a href="https://docs.ens.domains/dns-registrar-guide">guide</a> for
-          more detail.
-        </Section>
-
         <H2>When you register</H2>
 
         <Section question="At step 1, the transaction was slow so I speeded up">
@@ -152,9 +144,9 @@ function Faq() {
 
         <Section question="I am stuck at step 2">
           At times, the counter waits for up to a minute at the end of step 2 to
-          make sure that the Ethereum blockchain has progressed. If this
-          continues for more than 5 min after moving to step 2, please contact
-          us on Discord.
+          make sure that the Matic blockchain has progressed. If this continues
+          for more than 5 min after moving to step 2, please contact us on
+          Discord.
           <br />
           Note that if you leave it at step 2 for more than 7 days, it gets
           reset and you have to start from step 1 again.
@@ -247,20 +239,6 @@ function Faq() {
           new address (after setting the record to the new address).
         </Section>
 
-        <Section question="Why are some of my subdomains shown as a jumble of characters?">
-          ENS names are stored as a hash on-chain so we have to decode the name
-          using a list of possible names, and it shows in the hashed format if
-          we don't have it on our list. You can still access and manage the name
-          if you search for the name directly in the search bar.
-        </Section>
-
-        <Section question="How do I find the labelhash/namehash of a name?">
-          Please refer to our{' '}
-          <a href="https://docs.ens.domains/contract-api-reference/name-processing#how-do-i-find-the-labelhash-namehash-of-a-name">
-            developer documentation page.
-          </a>
-        </Section>
-
         <H2>When you extend your registration</H2>
 
         <Section question="How do I receive an extension reminder?">
@@ -281,38 +259,11 @@ function Faq() {
           owner overwrites it.
         </Section>
 
-        <Section question="Where can I see the list of names to be released">
-          You can see the list at the "ENS Names to be released" section of{' '}
-          <a href="https://dune.xyz/makoto/ens-released-to-be-released-names">
-            {' '}
-            the Dune Analytics dashboard
-          </a>{' '}
-          .
-        </Section>
-
         <Section question="I lost access to the Ethereum account that owns a name I registered. Can I still extend its registration period?">
           Any Ethereum account can pay to extend the registration of any ENS
           name, though doing so from an account that's not the owner will not
           change ownership of the name. Just go to the name's page and click
           "Extend".
-        </Section>
-
-        <Section question="I registered names before 2019 May. Can I have my deposit back?">
-          Yes, you can get your deposit back from
-          <a href="https://reclaim.ens.domains"> reclaim.ens.domains </a>{' '}
-          whether you extended the registration of the name or not.
-          <br />
-          Please remember that the amount you will receive is the amount of the
-          second-highest bidder (unless you were the only bidder). For example,
-          if you bid 1 ETH and the second highest bidder bid 0.1 ETH, you
-          deposited 0.1 ETH and you have already received the remaining (0.9
-          ETH) when you finailsed the auction. Therefore you can now only
-          reclaim 0.1 ETH back. Please read the{' '}
-          <a href="https://medium.com/the-ethereum-name-service/a-beginners-guide-to-buying-an-ens-domain-3ccac2bdc770">
-            {' '}
-            the initial guide back in 2017{' '}
-          </a>{' '}
-          for more detail.
         </Section>
       </FaqContainer>
     </>

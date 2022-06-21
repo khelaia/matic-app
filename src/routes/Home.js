@@ -127,8 +127,9 @@ const HowToUse = styled(HowToUseDefault)`
 `
 
 const Hero = styled('section')`
-  background: cornflowerblue;
-  background-size: 40px 40px;
+  background-color: #0b64bb;
+  // background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
+  background-size: 100px 100px;
   background-image: radial-gradient(circle, #ffffff 1px, rgba(0, 0, 0, 0) 1px);
   padding: 60px 20px 20px;
   position: relative;
@@ -247,6 +248,7 @@ const QuestionMark = styled(QuestionMarkDefault)`
 `
 
 const LogoLarge = styled(motion.img)`
+  // background:#0b64bb;
   width: 100%;
   margin: 0 auto 0;
   ${mq.medium`
@@ -340,7 +342,7 @@ export default ({ match }) => {
             </NavLink>
           )}
           <NavLink to="/favourites">{t('c.favourites')}</NavLink>
-          <ExternalLink href={aboutPageURL()}>{t('c.about')}</ExternalLink>
+          {/* <ExternalLink href={aboutPageURL()}>{t('c.about')}</ExternalLink> */}
         </Nav>
         {/*<MainPageBannerContainer>*/}
         {/*  <DAOBannerContent />*/}

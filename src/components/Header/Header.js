@@ -42,6 +42,7 @@ const Header = styled('header')`
       : ''}
   display: flex;
   flex-direction: row;
+  background: #fff;
   justify-content: center;
   position: fixed;
   left: 0;

@@ -1,1 +1,1 @@
-export const rpcUrl = 'https://polygon-rpc.com'
+export const rpcUrl = 'https://web3.ens.domains/v1/mainnet'
