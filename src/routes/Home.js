@@ -130,7 +130,6 @@ const Hero = styled('section')`
   background-color: #0b64bb;
   // background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
   background-size: 100px 100px;
-  background-image: radial-gradient(circle, #ffffff 1px, rgba(0, 0, 0, 0) 1px);
   padding: 60px 20px 20px;
   position: relative;
   display: flex;
@@ -253,7 +252,10 @@ const LogoLarge = styled(motion.img)`
   margin: 0 auto 0;
   ${mq.medium`
     width: 323px;
-  `}
+  `};
+  @media (max-width: 767px) {
+    width: 223px;
+  }
 `
 
 const PermanentRegistrarLogo = styled(motion.h1)`
