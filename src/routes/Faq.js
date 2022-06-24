@@ -74,7 +74,7 @@ function Faq() {
       <FaqContainer>
         <Title>FAQ</Title>
         <H2>Before You register</H2>
-        <Section question="Is ENS only for storing an Ethereum address?">
+        <Section question="Is ENS only for storing an Polygon address?">
           No, you can store the addresses of over 100 blockchains, a content
           hash of a decentralized website, profile information such as an avatar
           and Twitter handle, and more.
@@ -89,13 +89,13 @@ function Faq() {
           put the hash in your ENS name's Content record. Then it can be
           resolved by ENS-aware browsers (e.g. Opera), browser extensions
           (Metamask), or any browser with ".link" or ".limo" appended to the end
-          (e.g. matoken.eth.link or matoken.eth.limo).
+          (e.g. matoken.matic.link or matoken.matic.limo).
           <br />
           If you want to redirect your ENS name to an existing website, you
           could write a html file containing JavaScript logic to redirect to
           your website, upload the file into ipfs using services like{' '}
           <a href="https://pinata.cloud/">IPFS Pinata</a>, then set the CID to
-          your contenthash. See the source code of depositcontract.eth.link as
+          your contenthash. See the source code of depositcontract.matic.link as
           an example.
         </Section> */}
 
@@ -105,12 +105,12 @@ function Faq() {
 
         <Section question="Can you have names with emojis?">Yes.</Section>
 
-        <Section question="How much does it cost to register a .eth name?">
+        <Section question="How much does it cost to register a .matic name?">
           Currently, registration costs are set at the following prices:
           <ul>
-            <li>5+ character .eth names: $5 in MATIC per year.</li>
-            <li>4 character .eth names: $50 in MATIC per year.</li>
-            <li>3 character .eth names $200 in MATIC per year.</li>
+            <li>5+ character .matic names: $5 in MATIC per year.</li>
+            <li>4 character .matic names: $50 in MATIC per year.</li>
+            <li>3 character .matic names $200 in MATIC per year.</li>
           </ul>
           3 and 4 character names have 'premium' pricing to reflect the small
           number of these names available.
@@ -139,7 +139,7 @@ function Faq() {
 
         <Section question="My transaction at step 3 failed">
           This happens occasionally when the USD price changes and you haven't
-          registered with enough ETH. Please try again from step 3.
+          registered with enough MATIC. Please try again from step 3.
           <br />
           Please also be noted that the registration step will expire if you
           don't complete within 24 hrs and you have to start from step 1 again.
@@ -151,7 +151,7 @@ function Faq() {
           wallets fetch metadata from OpenSea.
           <br />
           As long as you can see your registered name under "My Account" on our
-          site or your ETH address under the name section, your name is
+          site or your MATIC address under the name section, your name is
           registered successfully.
         </Section>
 
@@ -166,14 +166,14 @@ function Faq() {
         <H2>After you register</H2>
 
         <Section question="What is the difference between the Registrant and Controller?">
-          If your Ethereum address is set as the Controller you can change the
+          If your Polygon address is set as the Controller you can change the
           resolver and add/edit records. Some dapps (eg: Fleek, OpenSea) set
           themselves as the Controller so they can update records on your
           behalf.
           <br />
-          The Registrant only exists on ".eth" names and it allows you to change
-          the Controller. If you transfer the Registrant to an address you don't
-          own, you lose the ownership of the name.
+          The Registrant only exists on ".matic" names and it allows you to
+          change the Controller. If you transfer the Registrant to an address
+          you don't own, you lose the ownership of the name.
         </Section>
 
         <Section question="What is a Resolver?">
@@ -184,11 +184,11 @@ function Faq() {
         </Section>
 
         <Section question="What is a Primary ENS Name record?">
-          A Primary ENS Name record (formerly Reverse Record) makes your
-          Ethereum address point to an ENS name. This allows dapps to find and
-          display your ENS name when you connect to them with your Ethereum
-          account. This can only be set by you so it is not set automatically
-          upon registration.
+          A Primary ENS Name record (formerly Reverse Record) makes your Polygon
+          address point to an ENS name. This allows dapps to find and display
+          your ENS name when you connect to them with your Polygon account. This
+          can only be set by you so it is not set automatically upon
+          registration.
           <br />
           To set the Primary ENS Name record, please click "My account", and
           select "Primary ENS Name".
@@ -198,7 +198,7 @@ function Faq() {
           If you click the "trash bin" icon on the address record, it will unset
           your address so that people can no longer look up your address with
           the name. You can also unset ownership of subdomains in this way, but
-          you cannot do so on ".eth" addresses. Because ".eth" names are
+          you cannot do so on ".matic" addresses. Because ".matic" names are
           ERC721-compliant NFTs, you cannot transfer them to an empty address
           (0x00000...). You can transfer it to a burn address (eg: 0x00001), but
           that does not erase the fact that you used to own the name. Also, the
@@ -207,8 +207,8 @@ function Faq() {
         </Section>
 
         <Section question="How do I transfer my name?">
-          For a ".eth" name, transfer both the Registrant and the Controller to
-          the new Ethereum account. Since ".eth" names are ERC721 compliant
+          For a ".matic" name, transfer both the Registrant and the Controller
+          to the new Polygon account. Since ".matic" names are ERC721 compliant
           NFTs, you can change the Registrant by simply transferring the NFT
           from any NFT compliant wallet/marketplace as well.
           <br />
@@ -216,8 +216,8 @@ function Faq() {
           does not change the controller nor records, so the recipient may need
           to update them once received. If the recipient is not experienced or
           you prefer your address not to be associated to the transferring
-          names, it may be a good idea for you to set the ETH Address record to
-          their Ethereum address, set the controller, then transfer the name.
+          names, it may be a good idea for you to set the MATIC Address record
+          to their Polygon address, set the controller, then transfer the name.
           <br />
           For subdomains, there are no registrants unless the subdomain is
           customised to be ERC721 compliant. Simply set the controller to the
@@ -240,12 +240,12 @@ function Faq() {
           owner can't edit the records but can still re-register the name. After
           the grace period, the name is released for registration by anyone with
           a temporary premium which decreases over a 28 days period. The
-          released name continues to resolve your ETH address until the new
+          released name continues to resolve your MATIC address until the new
           owner overwrites it.
         </Section>
 
-        <Section question="I lost access to the Ethereum account that owns a name I registered. Can I still extend its registration period?">
-          Any Ethereum account can pay to extend the registration of any ENS
+        <Section question="I lost access to the Polygon account that owns a name I registered. Can I still extend its registration period?">
+          Any Polygon account can pay to extend the registration of any ENS
           name, though doing so from an account that's not the owner will not
           change ownership of the name. Just go to the name's page and click
           "Extend".
