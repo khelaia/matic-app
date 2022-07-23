@@ -19,7 +19,7 @@ const NoAccountsContainer = styled('div')`
   align-items: center;
   justify-content: center;
   position: relative;
-  width: ${({ active }) => (active ? '150px' : '150px')};
+  width: ${({ active }) => (active ? '100px' : '100px')};
   transition: 0.2s;
 
   span {

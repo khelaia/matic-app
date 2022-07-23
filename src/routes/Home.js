@@ -127,7 +127,6 @@ const HowToUse = styled(HowToUseDefault)`
 `
 
 const Hero = styled('section')`
-  background-color: #0b64bb;
   // background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
   background-size: 100px 100px;
   padding: 60px 20px 20px;
@@ -169,12 +168,14 @@ const Search = styled(SearchDefault)`
   ${mq.medium`
     min-width: 780px;
   `}
-
+  .language__switch_container {
+    display: none;
+  }
   input {
     width: 100%;
     border-radius: 0px;
     ${mq.medium`
-      border-radius: 6px 0 0 6px;
+      border-radius: 6px;
       font-size: 28px;
     `}
   }

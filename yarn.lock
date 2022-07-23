@@ -2653,10 +2653,10 @@
     ethers "^4.0.32"
     lodash "^4.17.13"
 
-"@khelaia/ui@^5.5.31":
-  version "5.5.31"
-  resolved "https://registry.yarnpkg.com/@khelaia/ui/-/ui-5.5.31.tgz#86af97011f9df6b3b161cb651d0828cfddf7720e"
-  integrity sha512-iLVpNeJ1SE6FFauYwbwYOumukVvZVBLCI1O2am3iNkaN6Sx5LcfgqL9AUPyojcqOnSlU90qZFcP912FUJjlE5g==
+"@khelaia/ui@^5.5.32":
+  version "5.5.32"
+  resolved "https://registry.yarnpkg.com/@khelaia/ui/-/ui-5.5.32.tgz#f739c9669c646f4433796862a7c9a6416e2e44c7"
+  integrity sha512-T8y+x3Uv8RKz8tIGtyHQHg/IByCEVXCfBooCAr6a5eq/+aQToOrry1vzky6QlNLpgZjn/dlsEc8SUhc/LgaGLQ==
   dependencies:
     "@0xproject/utils" "^2.0.2"
     "@babel/runtime" "^7.4.4"

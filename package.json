@@ -16,7 +16,7 @@
     "@ensdomains/mock": "^2.1.51",
     "@ensdomains/offchain-resolver-contracts": "^0.2.1",
     "@khelaia/react-ens-address": "^5.5.5",
-    "@khelaia/ui": "^5.5.31",
+    "@khelaia/ui": "^5.5.32",
     "@ensdomains/web3modal": "1.9.4",
     "@gnosis.pm/safe-apps-provider": "^0.9.2",
     "@myetherwallet/mewconnect-web-client": "^2.2.0-beta.16",

@@ -42,18 +42,16 @@ const Header = styled('header')`
       : ''}
   display: flex;
   flex-direction: row;
-  background: #fff;
+  background: rgba(16 18 27 / 40%);
   justify-content: center;
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   z-index: 2;
-  box-shadow: 0 4px 8px 0 rgba(230, 240, 247, 0.8);
-  height: 50px;
+  //height: 50px;
   ${mq.medium`
-    box-shadow: 0 8px 24px 0 rgba(230, 240, 247, 0.8);
-    height: auto;
+    // height: auto;
   `}
 `
 
@@ -67,7 +65,6 @@ const SearchHeader = styled(Search)`
 `
 
 const Logo = styled(DefaultLogo)`
-  background: white;
   position: relative;
   display: flex;
   width: 100%;
@@ -80,16 +77,7 @@ const Logo = styled(DefaultLogo)`
 
   ${mq.medium`
     opacity: 1;
-    &:before {
-      background: #d3d3d3;
-      height: 32px;
-      margin-top: 30px;
-      content: '';
-      width: 1px;
-      right: 35px;
-      top: 0;
-      position: absolute;
-    }
+   
   `}
 `
 
@@ -102,7 +90,7 @@ function HeaderContainer() {
 
   return (
     <>
-      <Header isMenuOpen={isMenuOpen}>
+      <Header className={'header'} isMenuOpen={isMenuOpen}>
         <Logo isMenuOpen={isMenuOpen} />
         {mediumBP ? (
           <SearchHeader />

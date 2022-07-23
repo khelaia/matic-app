@@ -150,7 +150,6 @@ const useGetRecords = domain => {
       fetchPolicy: 'network-only'
     }
   )
-  console.log(dataAddresses, 'data address')
   const { loading: textRecordsLoading, data: dataTextRecords } = useQuery(
     GET_TEXT_RECORDS,
     {

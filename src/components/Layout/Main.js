@@ -6,16 +6,16 @@ import { hasNonAscii } from '../../utils/utils'
 
 const MainContainer = styled('main')`
   margin-top: 50px;
-
+  width: 100%;
   ${p =>
     p.hasNonAscii
       ? mq.medium`
-    margin-left: 200px;
-    margin-top: 250px;
+    margin-left: 250px;
+    margin-top: 200px;
   `
       : mq.medium`
-    margin-left: 200px;
-    margin-top: 150px;
+    margin-left: 250px;
+    margin-top: 100px;
   `}
 `
 

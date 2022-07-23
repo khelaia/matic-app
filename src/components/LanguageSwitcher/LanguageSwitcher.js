@@ -81,6 +81,8 @@ const ActiveLanguage = styled('div')`
 const LanguageSwitcherContainer = styled('div')`
   background: white;
   position: relative;
+  margin-left: auto;
+  border-radius: 8px;
 `
 
 const Dropdown = styled(motion.div)`
@@ -155,7 +157,7 @@ export default function LanguageSwitcher() {
   }
 
   return (
-    <LanguageSwitcherContainer>
+    <LanguageSwitcherContainer className={'language__switch_container'}>
       <ActiveLanguage
         ref={togglerRef}
         onClick={() => setShowDropdown(show => !show)}

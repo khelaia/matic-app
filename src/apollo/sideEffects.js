@@ -13,6 +13,7 @@ export const getReverseRecord = async address => {
     const { name: reverseName } = await ens.getName(address)
     const reverseAddress = await ens.getAddress(reverseName)
     const normalisedName = normalize(reverseName)
+    console.log(reverseName, address, reverseAddress, 'side effects')
     if (
       parseInt(address) === parseInt(reverseAddress) &&
       reverseName === normalisedName

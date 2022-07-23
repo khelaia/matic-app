@@ -18,7 +18,6 @@ const NetworkInformationContainer = styled('div')`
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 20px;
   ${mq.medium`
-    margin-top: 80px;
     margin-bottom: 50px;
     display: block;
     border: none;
@@ -31,7 +30,6 @@ const Blockies = styled(UnstyledBlockies)`
   left: 10px;
   top: 10px;
   ${mq.medium`
-    box-shadow: 3px 5px 24px 0 #d5e2ec;
   `}
 `
 
@@ -42,12 +40,11 @@ const Avatar = styled('img')`
   top: 10px;
   border-radius: 50%;
   ${mq.medium`
-    box-shadow: 3px 5px 24px 0 #d5e2ec;
   `}
 `
 
 const NetworkStatus = styled('div')`
-  color: #cacaca;
+  color: var(--theme-color);
   font-size: 14px;
   text-transform: capitalize;
   font-weight: 100;
@@ -68,7 +65,7 @@ const NetworkStatus = styled('div')`
 `
 
 const Account = styled('div')`
-  color: #adbbcd;
+  color: var(--theme-color);
   font-size: 16px;
   font-weight: 200;
   font-family: Overpass Mono;
@@ -82,11 +79,9 @@ const AccountContainer = styled('div')`
   padding: 10px 10px 10px 65px;
   position: relative;
   ${mq.medium`
-    transform: translate(-25px, 5px);
-    width: 225px;
+    width: 200px;
     &:hover {
       background: white;
-      box-shadow: -4px 18px 70px 0 rgba(108, 143, 167, 0.32);
       border-radius: 6px;
       .account {
         overflow: visible;

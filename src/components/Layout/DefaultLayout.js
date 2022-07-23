@@ -8,7 +8,7 @@ import Main from './Main'
 const DefaultLayout = ({ children }) => (
   <Fragment>
     <Header />
-    <Container>
+    <Container className={'wrapper'}>
       <SideNav />
       <Main>{children}</Main>
     </Container>

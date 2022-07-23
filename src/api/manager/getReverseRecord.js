@@ -19,6 +19,7 @@ export default async (_, { address }) => {
   try {
     const { name: reverseName } = await ens.getName(address)
     const reverseAddress = await ens.getAddress(reverseName)
+    console.log(address, reverseName, reverseAddress, '000')
     const normalisedName = normalize(reverseName)
     if (
       parseInt(address) === parseInt(reverseAddress) &&

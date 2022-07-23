@@ -15,29 +15,28 @@ const SearchForm = styled('form')`
   display: flex;
   position: relative;
 
-  &:before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translate(0, -50%);
-    display: block;
-    width: 27px;
-    height: 27px;
-    background: url(${searchIcon}) no-repeat;
-  }
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   left: 20px;
+  //   top: 50%;
+  //   transform: translate(0, -50%);
+  //   display: block;
+  //   width: 27px;
+  //   height: 27px;
+  //   background: url(${searchIcon}) no-repeat;
+  // }
 
   input {
-    padding: 20px 0 20px 55px;
-    width: 100%;
-    border: none;
-    border-radius: 0;
+    //padding: 20px 0 20px 55px;
+    //width: 100%;
+    //border: none;
+    //border-radius: 0;
     font-size: 18px;
-    font-family: Overpass;
-    font-weight: 100;
+    //font-family: Overpass;
+    //font-weight: 100;
     ${mq.medium`
-      width: calc(100% - 162px);
-      font-size: 28px;
+      font-size: 16px !important;
     `}
 
     &:focus {
@@ -107,7 +106,6 @@ function Search({ history, className, style }) {
           // inputValue doesn't have potential whitespace
           searchTerm = inputValue.toLowerCase()
         }
-        console.log(searchTerm, 'zzz', type)
         if (!searchTerm || searchTerm.length < 1) {
           return
         }
@@ -126,20 +124,22 @@ function Search({ history, className, style }) {
         }
       }}
     >
-      <input
-        placeholder={t('search.placeholder')}
-        ref={el => (input = el)}
-        onChange={handleParse}
-        autoCapitalize="off"
-      />
+      <div className={'search-bar'}>
+        <input
+          placeholder={t('search.placeholder')}
+          ref={el => (input = el)}
+          onChange={handleParse}
+          autoCapitalize="off"
+        />
+      </div>
       <LanguageSwitcher />
-      <button
-        disabled={!hasSearch}
-        type="submit"
-        data-testid={'home-search-button'}
-      >
-        {t('search.button')}
-      </button>
+      {/*<button*/}
+      {/*  disabled={!hasSearch}*/}
+      {/*  type="submit"*/}
+      {/*  data-testid={'home-search-button'}*/}
+      {/*>*/}
+      {/*  {t('search.button')}*/}
+      {/*</button>*/}
     </SearchForm>
   )
 }

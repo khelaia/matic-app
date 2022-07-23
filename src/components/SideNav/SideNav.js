@@ -32,11 +32,11 @@ const SideNavContainer = styled('nav')`
   margin-top: -10px;
   ${mq.medium`
     padding: 0;
-    left: 35px;
-    margin-top: 50px;
+    left: 15px;
+    padding-top: 50px;
     height: auto;
     background: transparent;
-    width: 165px;
+    width: 220px;
     display: block;
   `}
 
@@ -55,8 +55,8 @@ const SideNavContainer = styled('nav')`
       ${mq.medium`top: 200px`}
     `
       : `
-      top: 100px;
-      ${mq.medium`top: 100px`}
+      top: 67px;
+      ${mq.medium`top: 50px`}
     `}
 `
 
@@ -66,7 +66,7 @@ const NavLink = styled(Link)`
   justify-content: center;
   font-weight: 200;
   font-size: 22px;
-  color: ${p => (p.active ? '#5284FF' : '#C7D3E3')};
+  color: ${p => (p.active ? '#5284FF' : 'var(--theme-color)')};
   padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
@@ -76,24 +76,29 @@ const NavLink = styled(Link)`
   `}
 
   &:visited {
-    color: #c7d3e3;
+    color: var(--theme-color);
   }
 
   span {
     transition: 0.2s;
     margin-left: 15px;
-    color: ${p => (p.active ? '#5284FF' : '#C7D3E3')};
+    color: ${p => (p.active ? '#5284FF' : 'var(--theme-color)')};
   }
-
+  path {
+    fill: var(--theme-color);
+  }
+  g {
+    fill: var(--theme-color);
+  }
   &:hover {
     span {
-      color: #5284ff;
+      color: var(--theme-color);
     }
     path {
-      fill: #5284ff;
+      fill: var(--theme-color);
     }
     g {
-      fill: #5284ff;
+      fill: var(--theme-color);
     }
   }
 `
@@ -104,7 +109,7 @@ const ThirdPartyLink = styled('a')`
   justify-content: center;
   font-weight: 200;
   font-size: 22px;
-  color: ${p => (p.active ? '#5284FF' : '#C7D3E3')};
+  color: ${p => (p.active ? '#5284FF' : 'var(--theme-color)')};
   padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
@@ -114,24 +119,29 @@ const ThirdPartyLink = styled('a')`
   `}
 
   &:visited {
-    color: #c7d3e3;
+    color: var(--theme-color);
   }
 
   span {
     transition: 0.2s;
     margin-left: 15px;
-    color: ${p => (p.active ? '#5284FF' : '#C7D3E3')};
+    color: ${p => (p.active ? '#5284FF' : 'var(--theme-color)')};
   }
-
+  path {
+    fill: var(--theme-color);
+  }
+  g {
+    fill: var(--theme-color);
+  }
   &:hover {
     span {
-      color: #5284ff;
+      color: var(--theme-color);
     }
     path {
-      fill: #5284ff;
+      fill: var(--theme-color);
     }
     g {
-      fill: #5284ff;
+      fill: var(--theme-color);
     }
   }
 `
@@ -150,63 +160,69 @@ function SideNav({ match, isMenuOpen, toggleMenu }) {
     data: { accounts, isReadOnly }
   } = useQuery(SIDENAV_QUERY)
   return (
-    <SideNavContainer isMenuOpen={isMenuOpen} hasNonAscii={hasNonAscii()}>
+    <SideNavContainer
+      className={'left-side'}
+      isMenuOpen={isMenuOpen}
+      hasNonAscii={hasNonAscii()}
+    >
       <NetworkInformation />
-      <ul data-testid="sitenav">
-        {accounts?.length > 0 && !isReadOnly ? (
+      <div className={'side-wrapper'}>
+        <ul data-testid="sitenav" className={'side-menu'}>
+          {accounts?.length > 0 && !isReadOnly ? (
+            <li>
+              <NavLink
+                onClick={toggleMenu}
+                active={url === '/address/' + accounts[0] ? 1 : 0}
+                to={'/address/' + accounts[0]}
+              >
+                <File active={url === '/address/' + accounts[0]} />
+                <span>{t('c.mynames')}</span>
+              </NavLink>
+            </li>
+          ) : null}
           <li>
             <NavLink
               onClick={toggleMenu}
-              active={url === '/address/' + accounts[0] ? 1 : 0}
-              to={'/address/' + accounts[0]}
+              active={url === '/favourites' ? 1 : 0}
+              to="/favourites"
             >
-              <File active={url === '/address/' + accounts[0]} />
-              <span>{t('c.mynames')}</span>
+              <Heart active={url === '/favourites'} />
+              <span>{t('c.favourites')}</span>
             </NavLink>
           </li>
-        ) : null}
-        <li>
-          <NavLink
-            onClick={toggleMenu}
-            active={url === '/favourites' ? 1 : 0}
-            to="/favourites"
-          >
-            <Heart active={url === '/favourites'} />
-            <span>{t('c.favourites')}</span>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            onClick={toggleMenu}
-            active={url === '/faq' ? 1 : 0}
-            to="/faq"
-          >
-            <FaqIcon />
-            <span>{t('c.faq')}</span>
-          </NavLink>
-        </li>
-        <li style={{ listStyle: 'none', display: 'flex' }}>
-          <ThirdPartyLink
-            href={'https://twitter.com/asedomains'}
-            target={'_blank'}
-          >
-            <TwitterIcon />
-          </ThirdPartyLink>
-          <ThirdPartyLink
-            href={'https://discord.gg/UYb7kumf3s'}
-            target={'_blank'}
-            style={{ marginLeft: '10px' }}
-          >
-            <DiscordIcon />
-          </ThirdPartyLink>
-        </li>
-        {/* <li>
+          <li>
+            <NavLink
+              onClick={toggleMenu}
+              active={url === '/faq' ? 1 : 0}
+              to="/faq"
+            >
+              <FaqIcon />
+              <span>{t('c.faq')}</span>
+            </NavLink>
+          </li>
+          <li style={{ listStyle: 'none', display: 'flex' }}>
+            <ThirdPartyLink
+              href={'https://twitter.com/asedomains'}
+              target={'_blank'}
+            >
+              <TwitterIcon />
+            </ThirdPartyLink>
+            <ThirdPartyLink
+              href={'https://discord.gg/UYb7kumf3s'}
+              target={'_blank'}
+              style={{ marginLeft: '10px' }}
+            >
+              <DiscordIcon />
+            </ThirdPartyLink>
+          </li>
+          {/* <li>
           <ThirdPartyLink href={aboutPageURL()}>
             <Info />
             <span>{t('c.about')}</span>
           </ThirdPartyLink>
         </li> */}
-      </ul>
+        </ul>
+      </div>
     </SideNavContainer>
   )
 }

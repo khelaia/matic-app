@@ -173,10 +173,10 @@ export default async reconnect => {
     networkReactive(await getNetwork())
 
     await setWeb3Provider(provider)
-
-    if (accountsReactive?.[0]) {
-      reverseRecordReactive(await getReverseRecord(accountsReactive?.[0]))
-      delegatesReactive(await getShouldDelegate(accountsReactive?.[0]))
+    if (accountsReactive()?.[0]) {
+      let reverseRecord = await getReverseRecord(accountsReactive()?.[0])
+      reverseRecordReactive(reverseRecord)
+      // delegatesReactive(await getShouldDelegate(accountsReactive()?.[0]))
     }
 
     isReadOnlyReactive(isReadOnly())
