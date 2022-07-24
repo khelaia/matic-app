@@ -3,6 +3,7 @@ import styled from '@emotion/styled/macro'
 
 const HamburgerContainer = styled('div')`
   background: white;
+  border-radius: 8px;
   ${p =>
     p.isMenuOpen
       ? `
@@ -17,7 +18,7 @@ const HamburgerContainer = styled('div')`
   }
 
   .hamburger {
-    padding: 8px 0 15px 15px;
+    padding: 5px 0 8px 8px;
     display: inline-block;
     cursor: pointer;
     transition-property: opacity, filter;

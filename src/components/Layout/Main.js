@@ -5,8 +5,9 @@ import mq from 'mediaQuery'
 import { hasNonAscii } from '../../utils/utils'
 
 const MainContainer = styled('main')`
-  margin-top: 50px;
+  e.g. ase.matic.linkx;
   width: 100%;
+  overflow-y: scroll;
   ${p =>
     p.hasNonAscii
       ? mq.medium`

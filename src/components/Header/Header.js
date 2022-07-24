@@ -56,10 +56,12 @@ const Header = styled('header')`
 `
 
 const SearchHeader = styled(Search)`
-  margin-top: 50px;
+  margin-top: 70px;
+  margin-bottom: 20px;
   width: 100%;
   ${mq.medium`
     margin-top: 0;
+    margin-bottom: 0;
     width: calc(100% - 200px);
   `}
 `

@@ -80,9 +80,13 @@ const AccountContainer = styled('div')`
   position: relative;
   ${mq.medium`
     width: 200px;
+    &:hover .account, &:hover .network__name{
+    color: black;
+    }
     &:hover {
       background: white;
       border-radius: 6px;
+      color:black;
       .account {
         overflow: visible;
         white-space: normal;
@@ -135,7 +139,9 @@ function NetworkInformation() {
             <span>{displayName}</span>
           </Account>
           <NetworkStatus>
-            {network} {t('c.network')}
+            <span className={'network__name'}>
+              {network} {t('c.network')}
+            </span>
           </NetworkStatus>
           {!isSafeApp && (
             <NoAccountsModal
